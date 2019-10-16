@@ -1,6 +1,9 @@
 package it.beije.malang.web;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +30,28 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		
+		Connection con;
+		try {
+		con = 	ConnectionFactory.getConnection();
+			System.out.println("connesso");
+		} catch (ClassNotFoundException e) {
+			System.out.println("non connesso");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	//	System.out.println(con.isClosed());
+		
+		
+		response.getWriter();   //append("Served at: ").append(request.getContextPath());
+		
+		
 	}
 
 	/**
