@@ -19,7 +19,7 @@ public class TestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     * @see HttpServlet#HttpServlet()
+     * questo costruttore sarà chiamato solo la prima volta (scope application)
      */
     public TestServlet() {
         super();
