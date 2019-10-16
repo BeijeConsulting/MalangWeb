@@ -30,7 +30,9 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append(FileManager.getFileContent("C:\\Esercizi\\generato.csv"));
+		List<String> rows = FileManager.readFileAsList("C:\\Esercizi\\generato.csv");
+		for(String row : rows)
+			response.getWriter().append(row).append("</br>\n");
 	}
 
 	/**

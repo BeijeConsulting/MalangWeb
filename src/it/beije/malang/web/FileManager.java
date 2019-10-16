@@ -69,29 +69,29 @@ public class FileManager {
     }
 
     
-	public static void writeRow(File f, BufferedWriter writer, List<String> row, String separator) throws FileNotFoundException, IOException {
+	public static void writeRow(BufferedWriter writer, List<String> row, String separator) throws FileNotFoundException, IOException {
 		StringBuilder sb = new StringBuilder();
 		for(String el : row) 
 			sb.append(el).append(separator);
 		writer.write(sb.deleteCharAt(sb.length() - 1).append("\n").toString());
 	}
 
-	public static void writeRow(File f, BufferedWriter writer, List<String> row) throws FileNotFoundException, IOException {
-		writeRow(f, writer, row, "");
+	public static void writeRow(BufferedWriter writer, List<String> row) throws FileNotFoundException, IOException {
+		writeRow(writer, row, "");
 	}
 	
-	public static void writeRow(File f, BufferedWriter writer, String[] row, String separator) throws FileNotFoundException, IOException {
-		writeRow(f, writer, Arrays.asList(row), separator);
+	public static void writeRow(BufferedWriter writer, String[] row, String separator) throws FileNotFoundException, IOException {
+		writeRow(writer, Arrays.asList(row), separator);
 	}
 	
-	public static void writeRow(File f, BufferedWriter writer, String[] row) throws FileNotFoundException, IOException {
-		writeRow(f, writer, Arrays.asList(row), "");
+	public static void writeRow(BufferedWriter writer, String[] row) throws FileNotFoundException, IOException {
+		writeRow(writer, Arrays.asList(row), "");
 	}
 	
 	public static void writeFile(File f, List<String[]> rows, String separator) throws FileNotFoundException, IOException {
 		BufferedWriter writer = new BufferedWriter(new FileWriter(f));
 		for(String[] row : rows)
-			writeRow(f, writer, row, separator);
+			writeRow(writer, row, separator);
 		writer.close();
 	}
 	
@@ -100,31 +100,41 @@ public class FileManager {
 	}
 
 	
-	public static String[] readRow(File f, BufferedReader reader, String separator) throws IOException {
+	public static String[] readRow(BufferedReader reader, String separator) throws IOException {
 		return reader.readLine().split(separator);
 	}
 
-	public static String[] readRow(File f, BufferedReader reader) throws IOException {
+	public static String[] readRow(BufferedReader reader) throws IOException {
 		return reader.readLine().split(" ");
 	}
 	
-	public static List<String> readRowAsList(File f, BufferedReader reader, String separator) throws IOException{
-		return Arrays.asList(readRow(f, reader, separator));
+	public static List<String> readRowAsList(BufferedReader reader, String separator) throws IOException{
+		return Arrays.asList(readRow(reader, separator));
 	}
 
-	public static List<String> readRowAsList(File f, BufferedReader reader) throws IOException{
-		return readRowAsList(f, reader, " ");
+	public static List<String> readRowAsList(BufferedReader reader) throws IOException{
+		return readRowAsList(reader, " ");
 	}
 	
-	public static List<String> readFileAsList(File f, BufferedReader reader) throws IOException{
-		
+	
+	public static List<String> readFileAsList(File f) throws IOException{
+		BufferedReader reader = new BufferedReader(new FileReader(f));
+		List<String> res = new ArrayList<>();
+		while(reader.ready()) 
+			res.add(reader.readLine());
+		reader.close();
+		return res;
+	}
+	
+	public static List<String> readFileAsList(String path) throws IOException{
+		return readFileAsList(new File(path));
 	}
 	
 	public static List<String[]> readFileAsRowList(File f, String separator) throws IOException{
 		BufferedReader reader = new BufferedReader(new FileReader(f));
 		List<String[]> res = new ArrayList<>();
 		while(reader.ready())
-			res.add(readRow(f, reader, separator));
+			res.add(readRow(reader, separator));
 		
 		reader.close();
 		return res;
