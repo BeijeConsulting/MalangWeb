@@ -25,7 +25,7 @@ System.out.print("ADDIO " + nome);
  
 if (nome == null) {
 %>
-<p>2 + 2 = <%= 2 + 2 %></p>
+<p>3 + 2 = <%= 3 + 2 %></p>
 <% } else { %>
 piacere di conoscerti
 <% } %>
