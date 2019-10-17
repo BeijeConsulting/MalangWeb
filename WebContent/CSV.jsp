@@ -36,11 +36,9 @@ StringTokenizer tokenizer = null;
 StringBuilder sb = new StringBuilder();%>
 <%while (br.ready())
 {
-	tokenizer = new StringTokenizer(br.readLine(), ";");
-	out.print(tokenizer.nextToken() + ";");
-	out.print(tokenizer.nextToken() + ";");
-	out.print(tokenizer.nextToken() + ";");
-	out.print(tokenizer.nextToken() + ";"); %><br><%
+	%><center><%
+	out.print(br.readLine());%><br><%
+	%></center><%
  } %>
  <%br.close(); %>
 
