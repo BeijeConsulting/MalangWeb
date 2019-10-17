@@ -1,38 +1,50 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
 <%@ page import="java.util.List" %>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title><%= "Prima JSP" %></title>
+<title><%= "Benvenuto " + request.getParameter("nome") %></title>
 </head>
 <body>
+<style>
 
-<!-- COMMENTO HTML -->
-<%-- COMMENTO JSP --%>
+#input{
+margin:5px;
+padding:10px;
+border:2px solid black;
+border-radius:10px;
+color:black;
+}
 
-<% String nome = request.getParameter("nome"); %>
+#input_submit{
+margin:5px;
+padding:10px;
+border:2px solid yellow;
+border-radius:10px;
+color:black;
+background-color:
+}
 
-<%= "CIAO " + nome %><br>
+#form{
+border:1px solid black;
+border-radius:10px;
+}
 
-<%
-/* out.print("ADDIO " + nome);
-System.out.print("ADDIO " + nome);
- */
- 
-if (nome == null) {
-%>
-<p>2 + 2 = <%= 2 + 2 %></p>
-<% } else { %>
-piacere di conoscerti
-<% } %>
-
-<% for (char c = 'a'; c <= 'z'; c++) { %>
-	<p><%= c %></p>
-<% } %>
+#txt{
+font-size:25px;
+color:yellow;
+font-weight:bold;
+}
+</style>
+<center>
+<font id="txt">Benvenuto <%= request.getParameter("nome") %></font>
+<form action="Registrazione.jsp" method="GET" id="form">
+<input id="input" placeholder="Email..." type="text" name="email"><br>
+<input id="input" placeholder="Password" type="password" name="password"><br>
+<input id="input_submit" type="submit" value="Conferma" name="send"><br>
+</form></center>
 
 </body>
 </html>
