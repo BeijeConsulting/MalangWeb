@@ -39,12 +39,22 @@ font-weight:bold;
 }
 </style>
 <center>
-<font id="txt">Benvenuto <%= request.getParameter("nome") %></font>
 <form action="Registrazione.jsp" method="GET" id="form">
 <input id="input" placeholder="Email..." type="text" name="email"><br>
 <input id="input" placeholder="Password" type="password" name="password"><br>
 <input id="input_submit" type="submit" value="Conferma" name="send"><br>
 </form></center>
-
+<center>
+<%
+try{
+if(request.getParameter("errore").equals("campi_vuoti")){
+	out.print("<hr><b style='color:red'>Ooops...I campi non possono essere vuoti.</b>");
+	return;
+}
+}catch(Exception e){
+	
+}
+%>
+</center>
 </body>
 </html>
