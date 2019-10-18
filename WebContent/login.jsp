@@ -4,13 +4,24 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Form Authentication</title>
+
+<title>login</title>
 </head>
 <body>
-<form action="auth.jsp" method="post">
-User name : <input type="text" name="Username"><br>
-Pass word : <input type="password" name="Password" ><br>
-<input type="submit" value="Submit">
+
+<%
+String error = (String) request.getSession().getAttribute("error");
+if (error != null) {
+	out.print(error + "<br><br>");
+	request.getSession().removeAttribute("error");
+}
+%>
+
+<form action="servlet" method="post">
+	USERNAME : <input type="text" name="username"><br>
+	PASSWORD : <input type="password" name="password"><br>
+	<input type="submit" value="ACCEDI">
 </form>
+
 </body>
 </html>
