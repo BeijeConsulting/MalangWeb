@@ -3,6 +3,7 @@ package it.beije.malang.web;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -49,6 +50,13 @@ public class FirstTestServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+//		String filename = "C:\\temp\\contatti1.xml";
+//		 
+//        request.setAttribute("filename", filename);
+// 
+//        RequestDispatcher requestDispatcher = request.getRequestDispatcher("MioIndex.jsp");
+// 
+//        requestDispatcher.forward(request, response);
 	}
 
 }
