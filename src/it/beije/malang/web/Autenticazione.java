@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.catalina.Session;
+
 /**
  * Servlet implementation class Autenticazione
  */
@@ -34,7 +36,6 @@ public class Autenticazione extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 		String username = request.getParameter("user");
 		String password = request.getParameter("passw");
 		if((Dati.getUser().equals(username))&&(Dati.getPassw().equals(password)))
@@ -43,8 +44,9 @@ public class Autenticazione extends HttpServlet {
 		}
 		else
 		{
+			request.getSession().setAttribute("error", "CREDENZIALI ERRATE");
 			response.sendRedirect("Login.jsp");
-
+			
 		}
 	}
 

@@ -15,8 +15,7 @@
 <p>Password: <input type="password" placeholder="Password" name="passw"/></p>
 <p><input type="submit" value="Login"></p>
 </form>
-<% System.out.println(request.getParameter("user"));
-   System.out.println(request.getParameter("password"));
+<% 
 String user = request.getParameter("user");%>
 <% String passw = request.getParameter("passw");%>
 <% if (user==null||passw==null){

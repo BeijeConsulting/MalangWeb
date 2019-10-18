@@ -8,7 +8,8 @@
 </head>
 <body>
 <center>
-
+<%String error = (String) request.getSession().getAttribute("error");
+if (error != null) out.print (error + "<br><br>");%>
 <form method="POST" action="Autenticazione">
 <p>Username: <input type="text" placeholder="Username" name="user"/></p>
 <p>Password: <input type="password" placeholder="Password" name="passw"/></p>
