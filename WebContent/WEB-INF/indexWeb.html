@@ -1,0 +1,99 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Marco</title>
+</head>
+<style>
+body{
+background-color:orange;
+}
+#input{
+	border:2px solid white;
+	border-radius:10px;
+	color:white;
+	font-size:15px;
+	font-style:italic;
+	background-color:orange;
+	margin:5px;
+}
+#input_due{
+	border:2px solid white;
+	border-radius:10px;
+	color:white;
+	font-size:15px;
+	font-style:italic;
+	background-color:orange;
+	margin:5px;
+	padding:100px;
+	width:220px;
+}
+#imm{
+	border:5px solid white;
+	border-radius:10px;
+}
+#face{
+	heigth:40px;
+	width:40px;
+}
+#face_due{
+	heigth:40px;
+	width:40px;
+}
+/* unvisited link */
+    
+    a:link {
+        color: white;
+        text-decoration:none;
+    }
+    /* visited link */
+    
+    a:visited {
+        color: white;
+       text-decoration:none;
+    }
+    /* mouse over link */
+    
+    a:hover {
+        color: red;
+        text-decoration:none;
+    }
+    /* selected link */
+    
+    a:active {
+        color: white;
+        text-decoration:none;
+    }
+</style>
+<body>
+<p><font color='white'><center><h1>Ciao sono Marco e lavoro qui....</h1></center></font><br></p>
+
+<center><img id='imm' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHxACD5lyRfz04lVxppRF_RdeYOAjIrPsLugUNzeTNMmvsyZIQ'></center>
+
+<p><font color='white'><center>Qui alla Beije&consulting offriamo molti servizi visita la nostra pagina faceboock e il nostro sito</center></font></p><br>
+
+<center><a href="https://www.facebook.com/beijeconsultingsrl/"><img id ='face' src='http://www.piccolocamisano.it/facebook-icon.png'></b></a></center>
+<center><a href="http://www.beije.it/"><b><img id ='face_due' src='https://media.licdn.com/dms/image/C560BAQH0jVKlRxGwyw/company-logo_200_200/0?e=2159024400&v=beta&t=1XL8mlQdD5PRXZPFk0PUFM1kCdznIQgGZ-SoBYzReIg'></b></a></center>
+<br>
+<center><p><font color='white'><i>Inserisci qui i tuoi dati per la Work-Mail:</i></font></p></center>
+<form action="servlet" method="GET">
+<center><input id="input" type="text" name="primo" placeholder="inserisci il tuo nome" autocomplete="off"><br></center>
+<center><input id="input" type="text" name="secondo" placeholder="inserisci il tuo cognome" autocomplete="off"><br></center>
+<center><input id="input" name="invio" type="submit" value="Genera Mail"></center>
+</form><br>
+
+<p><font color='white'>FORMAT ESPERIENZE..</font></p>
+<form action="servlet" method="GET">
+<input id="input" type="text" name="terzo" placeholder="inserisci il tuo nome" autocomplete="off">
+<input id="input" type="text" name="quarto" placeholder="inserisci il tuo cognnome" autocomplete="off"><br>
+<input id="input" type="text" name="quinto" placeholder="inserisci la tua data di nascita" autocomplete="off">
+<input id="input" type="text" name="sesto" placeholder="inserisci la città natale" autocomplete="off"><br>
+<input id="input" type="text" name="settimo" placeholder="inserisci il tuo CF" autocomplete="off"><br>
+<textarea id="input_due" type="text" name="ottavo" placeholder="inserisci una breve esperienza lavorativa" autocomplete="off"></textarea><br>
+<input id="input" name="invio" type="submit" value="Genera CV">
+</form>
+
+</body>
+</html>

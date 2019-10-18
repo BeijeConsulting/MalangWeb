@@ -1,38 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
-<%@ page import="java.util.List" %>
-
+  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title><%= "Prima JSP" %></title>
+<title>Marco</title>
 </head>
 <body>
+<style>
+#input{
+margin:5px;
+border:1px solid black;
+padding:5px;
+border-radius:10px;
+}
 
-<!-- COMMENTO HTML -->
-<%-- COMMENTO JSP --%>
+#submit{
+margin:5px;
+border:1px solid black;
+padding:5px;
+border-radius:10px;
+}
 
-<% String nome = request.getParameter("nome"); %>
-
-<%= "CIAO " + nome %><br>
-
+#submit:hover{
+margin:5px;
+border:2px solid black;
+padding:5px;
+border-radius:10px;
+background-color:red;
+color:black;
+}
+</style>
+<form action="Registrazione.jsp" method="get">
+<input type="text" id="input" name="username" placeholder="inserisci user"><br>
+<input type="password" id="input" name="password" placeholder="inserisci pass"><br>
+<input type="submit" id="submit" value="REGISTRATI" name="x">
+</form>
+<br>
 <%
-/* out.print("ADDIO " + nome);
-System.out.print("ADDIO " + nome);
- */
- 
-if (nome == null) {
+if(request.getParameter("status")!=null){
+	if(request.getParameter("status").equals("duplicato")){
+		out.print("<font style='color:red'>Contatto gia esistente</font>");
+	}else if(request.getParameter("status").equals("inserito")){
+		out.print("<font style='color:green'>Contatto Inserito</font>");
+	}else if(request.getParameter("status").equals("vuoto")){
+		out.print("<font style='color:blue'>Devi compilare tutti i campi</font>");
+	}
+}
+
+	//if(request.getParameter("risultato")==null){
+	//	out.print("Impossibile registrarsi, riprova più tardi ;)");
+	//}
+	//if(String errore = request.getParameter("errore")!=null){
+	//   out.print("impossibile inserire i dati!")
+	//}
 %>
-<p>2 + 2 = <%= 2 + 2 %></p>
-<% } else { %>
-piacere di conoscerti
-<% } %>
-
-<% for (char c = 'a'; c <= 'z'; c++) { %>
-	<p><%= c %></p>
-<% } %>
-
 </body>
 </html>
