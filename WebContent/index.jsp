@@ -3,7 +3,9 @@
     pageEncoding="ISO-8859-1"
     %>
  <%@page import="java.util.List"
+
     %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +13,9 @@
 <title>First JSP</title>
 </head>
 <body>
+
+
+
 
 <% for(char c='a';c<='z';c++){ %>
 <%out.print(c);
@@ -23,6 +28,7 @@ ArrayList<String> arr = new ArrayList<String>();
 arr.add(prova);
 out.print(prova);
 %>
+
 
 
 
