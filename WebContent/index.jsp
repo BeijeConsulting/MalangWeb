@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Servlet</title>
+<title>Beije Consulting</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -21,12 +21,11 @@
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href="index.jsp">Home</a></li>
-      <li><a href="CSV.jsp">CSV</a></li>
-      <li><a href="XML.jsp">XML</a></li>
-      <li><a href="DB.jsp">DATABASE</a></li>
     </ul>
   </div>
 </nav>
+<center>BENVENUTO NEL SITO BEIJE CONSULTING<br><br>
+<a href="login.jsp"><input type="button" value="LOGIN" ></a><br><br>
 
 </body>
 </html>
