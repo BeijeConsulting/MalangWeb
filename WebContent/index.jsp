@@ -13,22 +13,22 @@
 margin:5px;
 border:1px solid black;
 padding:5px;
-border-radius:10px;
+border-radius:8px;
 }
 
 #submit{
 margin:5px;
 border:1px solid black;
 padding:5px;
-border-radius:10px;
+border-radius:8px;
 }
 
 #submit:hover{
 margin:5px;
 border:2px solid black;
 padding:5px;
-border-radius:10px;
-background-color:red;
+border-radius:8px;
+background-color:green;
 color:black;
 }
 </style>
