@@ -42,7 +42,6 @@ public class XMLServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		try {
 			XMLReg.addXMLContact(request.getParameter("param_cognome"), request.getParameter("param_nome"),
 								 request.getParameter("param_email"),request.getParameter("param_telefono"));
