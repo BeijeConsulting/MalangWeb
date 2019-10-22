@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<<<<<<< HEAD
 <title>Insert title here</title>
 </head>
 <body>
@@ -34,7 +33,6 @@
   </div>
 </form>
 
-=======
 <title>login</title>
 </head>
 <body>
@@ -52,7 +50,6 @@ if (error != null) {
 	PASSWORD : <input type="password" name="password"><br>
 	<input type="submit" value="ACCEDI">
 </form>
->>>>>>> refs/remotes/origin/master
 
 </body>
 </html>

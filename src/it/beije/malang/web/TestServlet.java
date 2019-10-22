@@ -29,29 +29,8 @@ public class TestServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-//		String nome = request.getParameter("nome");
-//		response.getWriter().append(nome);
-		
-		FileReader file = new FileReader("C:\\temp\\rosa_squadra.txt");
-		BufferedReader reader = new BufferedReader(file);
-		
-		String text = "";
-		String line = reader.readLine();
-		
-		while (line != null) {
-			text = line;
-			//System.out.println(text);
-			line = reader.readLine();
-		
-			String nomi[] = text.split(";");
-			
-			response.getWriter().append(text.replace(";", " ") +"\t"  + "\n");
-
-		}
-}
-	
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}	
 	
 		
 
