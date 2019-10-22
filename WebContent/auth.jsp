@@ -47,6 +47,11 @@ user.setCognome(request.getParameter("param_cognome")); */
 
 <% //user.getNome() %> <% //user.getCognome() %>
 <h3><center>BENVENUTO NEL SITO BEIJE CONSULTING<br><jsp:getProperty name="userBean" property="nome"/> <jsp:getProperty name="userBean" property="cognome"/></center></h3>
+<%= userBean.getNome() %> <%= userBean.getCognome() %><br>
+<jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
+<br><br>
+<a href="login2.jsp">MODIFICA</a>
+
 
 </body>
 </html>
