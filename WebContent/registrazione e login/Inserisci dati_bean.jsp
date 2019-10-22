@@ -46,7 +46,7 @@ div {
 }
 </style>
 <div>
-  <form action="salva_contatti_bean.jsp">
+  <form action="ConfermaContatto.jsp">
     <label for="fname">Name</label>
     <input type="text"  name="name" placeholder="Your name..">
 
@@ -59,7 +59,7 @@ div {
     <label for="lname">Telefono</label>
     <input type="text" name="telefono" placeholder="Your phone..">
 
-    <input type="submit" value="Registrati">
+    <input type="submit" value="Invio">
   </form>
 </div>
 
