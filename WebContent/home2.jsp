@@ -12,7 +12,7 @@
 <body>
 
 <jsp:useBean id="user" class="it.beije.malang.web.Utente" scope="session" />
-CIAO <jsp:getProperty name="user" property="nome"/> <jsp:getProperty name="user" property="cognome"/>
+Ciao <jsp:getProperty name="user" property="nome"/> <jsp:getProperty name="user" property="cognome"/>
 
 </body>
 </html>

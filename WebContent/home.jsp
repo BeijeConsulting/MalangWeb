@@ -16,12 +16,12 @@ Utente user = (Utente) request.getSession().getAttribute("user");
 
 if (user != null) {
 %>
-CIAO <%= user.getNome() %> <%= user.getCognome() %>!!
+Ciao <%= user.getNome() %> <%= user.getCognome() %>!
 <% } else {
 	//out.print("NON SEI AUTENTICATO!!!");
 	response.sendRedirect("login.jsp");
 	}
 %>
-}
+
 </body>
 </html>
