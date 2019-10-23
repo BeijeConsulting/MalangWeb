@@ -7,6 +7,16 @@
 <title>Form</title>
 </head>
 <body>
+
+<jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
+<%
+String nome = userBean.getNome() != null ? userBean.getNome() : "";
+String cognome = userBean.getCognome();
+if (cognome == null) {
+	cognome = "";
+}
+%>
+
 <form action="confirmpage.jsp" method="post">
 	Nome : <input type="text" name="nome"><br>
 	Cognome : <input type="text" name="cognome"><br>
