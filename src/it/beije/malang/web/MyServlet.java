@@ -13,7 +13,7 @@ import it.beije.malang.web.importfile;;
  * Servlet implementation class MyFirstServlet
  */
 
-@WebServlet("/servlet")
+@WebServlet("/myservlet")
 public class MyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
