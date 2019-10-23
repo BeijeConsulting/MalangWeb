@@ -1,26 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+
+<%@page import="it.beije.malang.web.Utente"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>login</title>
+<title>BEAN</title>
 </head>
 <body>
 
+<jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
+<jsp:setProperty name="userBean" property="nome" param="param_nome"/>
+<jsp:setProperty name="userBean" property="cognome" param="param_cognome"/>
 <%
-String error = (String) request.getSession().getAttribute("error");
-if (error != null) {
-	out.print(error + "<br><br>");
-	request.getSession().removeAttribute("error");
+//TRADUZIONE IN JAVA :
+Utente user = (Utente) request.getSession().getAttribute("userBean");
+if (user == null) {
+	user = new Utente();
+	request.getSession().setAttribute("user", user);			
 }
+user.setNome(request.getParameter("param_nome"));
+user.setCognome(request.getParameter("param_cognome"));
 %>
 
-<form action="servlet" method="post">
-	USERNAME : <input type="text" name="username"><br>
-	PASSWORD : <input type="password" name="password"><br>
-	<input type="submit" value="ACCEDI">
-</form>
+<%= user.getNome() %> <%= user.getCognome() %><br>
+<jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
 
 </body>
 </html>
