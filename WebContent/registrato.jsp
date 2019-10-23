@@ -33,6 +33,11 @@ COGNOME: <jsp:getProperty name="userBean" property="cognome"/><br>
 NOME: <jsp:getProperty name="userBean" property="nome"/><br>
 EMAIL: <jsp:getProperty name="userBean" property="email"/><br>
 TELEFONO: <jsp:getProperty name="userBean" property="telefono"/><br>
+
+<form action="Start" method="get">
+<%request.getSession().removeAttribute("userBean"); %>
+<input type="submit" value="home">
+</form>
 </center>
 </body>
 </html>

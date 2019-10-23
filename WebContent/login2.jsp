@@ -25,13 +25,20 @@
 <center>
 <jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
 <%
+String error = (String) request.getSession().getAttribute("error");
+if (error != null) {
+	out.print(error + "<br><br>");
+	request.getSession().removeAttribute("error");
+}
+%>
+<%
 String cognome = userBean.getCognome() != null ? userBean.getCognome() : "";
 String nome = userBean.getNome() != null ? userBean.getNome() : "";
 String email = userBean.getEmail() != null ? userBean.getEmail() : "";
 String telefono = userBean.getTelefono() != null ? userBean.getTelefono() : "";
 %>
 
-<form action="auth2.jsp" method="post">
+<form action="Controllo" method="post">
 	COGNOME : <input type="text" name="param_cognome" value="<%= cognome %>"><br>
 	NOME : <input type="text" name="param_nome" value="<%= nome %>"><br>
 	EMAIL : <input type="text" name="param_email" value="<%= email %>"><br>

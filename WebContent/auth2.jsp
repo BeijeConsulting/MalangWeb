@@ -48,7 +48,9 @@ TELEFONO: <jsp:getProperty name="userBean" property="telefono"/><br>
 <form action="XMLServlet2" method="post">
 <input type="submit" value="REGISTRA XML"><br><br>
 </form>
-<a href="login2.jsp">MODIFICA</a>
+<form action="Start" method="get">
+<input type="submit" value="HOME"><br><br>
+</form>
 </center>
 </body>
 </html>
