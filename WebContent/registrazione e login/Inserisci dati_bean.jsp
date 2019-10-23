@@ -46,25 +46,48 @@ div {
 }
 </style>
 <div>
+<jsp:useBean id="userBean" class="it.beije.malang.database.entities.Contatto" scope="session" />
+<%
+String name = userBean.getNome() != null ? userBean.getNome() : "";
+String surname = userBean.getCognome();
+if (surname == null) {
+	surname = "";
+}
+
+String email = userBean.getEmail();
+if (email == null) {
+	email = "";
+}
+
+String phone = userBean.getTelefono();
+if (phone == null) {
+	phone = "";
+}
+%>
   <form action="ConfermaContatto.jsp">
     <label for="fname">Name</label>
-    <input type="text"  name="name" placeholder="Your name..">
+    <input type="text"  name="name" value="<%= name %>">
 
     <label for="lname">Surname</label>
-    <input type="text" name="surname" placeholder="Your surname..">
+    <input type="text" name="surname" value="<%= surname %>">
     
     <label for="lname">Email</label>
-    <input type="text" name="email" placeholder="Your eMail..">
+    <input type="text" name="email" value="<%= email %>">
     
     <label for="lname">Telefono</label>
-    <input type="text" name="telefono" placeholder="Your phone..">
+    <input type="text" name="phone" value="<%= phone %>">
 
     <input type="submit" value="Invio">
   </form>
 </div>
 
-
-
+<%-- 
+<form action="auth.jsp" method="get">
+	NOME : <input type="text" name="param_nome" value="<%= name %>"><br>
+	COGNOME : <input type="text" name="param_cognome" value="<%= surname %>"><br>
+	<input type="submit" value="ACCEDI">
+</form>
+--%>
 <!-- COMMENTO HTML -->
 <%-- COMMENTO JSP --%>
 

@@ -13,12 +13,15 @@
 <jsp:setProperty name="userBean" property="nome" param="name"/>
 <jsp:setProperty name="userBean" property="cognome" param="surname"/>
 <jsp:setProperty name="userBean" property="email" param="email"/>
-<jsp:setProperty name="userBean" property="telefono" param="telefono"/>
+<jsp:setProperty name="userBean" property="telefono" param="phone"/>
 
- <%= "nome =" + userBean.getNome() + "\n" %> 
- <%= "cognome=" + userBean.getCognome() + "\n" %>
+ <%= "name =" + userBean.getNome() + "\n" %> 
+ <%= "surname=" + userBean.getCognome() + "\n" %>
  <%= "email =" + userBean.getEmail() + "\n" %> 
- <%= "telefono=" + userBean.getCognome() + "\n" %>
+ <%= "phone=" + userBean.getTelefono() + "\n" %>
+ 
+ <a href="Inserisci dati_bean.jsp">MODIFICA</a>
+ <a href="salva_contatti_bean.jsp">CONFERMA</a>
  
  
 </body>

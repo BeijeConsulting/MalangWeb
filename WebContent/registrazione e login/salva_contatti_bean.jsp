@@ -25,5 +25,15 @@ ciao <%= userBean.getNome() %> <%= userBean.getCognome() %>
 la tua mail e numero di telefono sono:
 
 <%= userBean.getEmail() %> <%= userBean.getTelefono() %>
+<% List<Contatto> contatti = new ArrayList<>();
+	Contatto contatto = new Contatto();
+	contatto.setNome(userBean.getNome());
+	contatto.setCognome(userBean.getCognome());
+	contatto.setEmail(userBean.getEmail());
+	contatto.setTelefono(userBean.getTelefono());
+
+	contatti.add(contatto);
+	FromDbToCsv.writeCsv(contatti); %>
+
 </body>
 </html>
