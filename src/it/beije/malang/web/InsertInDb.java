@@ -6,19 +6,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import it.beije.malang.web.FileManager;
+import static it.beije.malang.web.ScriviCSV.scrivi;
 /**
  * Servlet implementation class TestServlet 
  * Per la gestione del login con rindirizzamento in funzione dei casi
  */
-@WebServlet("/servlet")
-public class TestServlet extends HttpServlet {
+@WebServlet("/insertServlet")
+public class InsertInDb extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * questo costruttore sarà chiamato solo la prima volta (scope application)
      */
-    public TestServlet() {
+    public InsertInDb() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -46,7 +47,10 @@ public class TestServlet extends HttpServlet {
 			Utente utente = new Utente();
 			utente.setNome("Pippo");
 			utente.setCognome("Pluto");
-			request.getSession().setAttribute("user", utente);			
+			request.getSession().setAttribute("user", utente);	
+			//scrivi("C:\\temp\\prova.txt", utente);
+			
+			
 			//response.sendRedirect("home.jsp");
 			response.sendRedirect("home2.jsp");
 			

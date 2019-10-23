@@ -15,15 +15,19 @@ body {background-color: white;}
 <h1  style="text-align:center;">Login</h1>
 <p style="font-size:25px;">Chi sei?</p>
 
-<form action="auth.jsp"  method="get">
+<form action="insertServlet"  method="get">
   Username:<br>
   <input type="text" name="username" >
   <br>
   Password:<br>
   <input type="password" name="password"> 
   <br><br>
+  <!--  Email:<br>
+  <input type="text" name="text"> 
+  --> 
+  <br><br>
    <input type="submit" value="Invio">
-  
+ 
 </form> 
  <% 
   /*  String a = (String)request.getSession().getAttribute("true");
