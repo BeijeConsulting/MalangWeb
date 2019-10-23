@@ -31,12 +31,6 @@
 <jsp:setProperty name="userBean" property="nome" param="param_nome"/>
 <jsp:setProperty name="userBean" property="email" param="param_email"/>
 <jsp:setProperty name="userBean" property="telefono" param="param_telefono"/>
-<%
-String cognome = userBean.getCognome() != null ? userBean.getCognome() : "";
-String nome = userBean.getNome() != null ? userBean.getNome() : "";
-String email = userBean.getEmail() != null ? userBean.getEmail() : "";
-String telefono = userBean.getTelefono() != null ? userBean.getTelefono() : "";
-%>
 
 <form action="CSVServlet2" method="post">
 COGNOME: <jsp:getProperty name="userBean" property="cognome"/><br>
