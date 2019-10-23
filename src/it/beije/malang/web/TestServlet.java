@@ -39,21 +39,43 @@ public class TestServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
 		
-		if (username != null && username.equalsIgnoreCase("pippo")
-			&& password != null && password.equalsIgnoreCase("pluto")) {
-			Utente utente = new Utente();
-			utente.setNome("Pippo");
-			utente.setCognome("Pluto");
-			request.getSession().setAttribute("user", utente);			
-			//response.sendRedirect("home.jsp");
-			response.sendRedirect("home2.jsp");
-		} else {
-			request.getSession().setAttribute("error", "CREDENZIALI ERRATE");;
-			response.sendRedirect("login.jsp");
+		try {
+			String name = request.getParameter("name");
+			String surname = request.getParameter("surname");
+			String email = request.getParameter("email");
+			String phone = request.getParameter("phone");
+			
+			User u = new User();
+			u.setName(name);
+			u.setSurname(surname);
+			u.setEmail(email);
+			u.setPhone(phone);
+			
+			request.getSession().setAttribute("userBean", u);
+			response.sendRedirect("confirm.jsp");
 		}
+		catch(NullPointerException ex) {
+			response.sendRedirect("index.jsp?error=INVALID_FIELDS");
+		}
+		
+//		String name = request.getParameter("name");
+//		String password = request.getParameter("surname");
+//		String email = request.getParameter("email");
+//		String phone = request.getParameter("phone");
+//		
+//		if (username != null && username.equalsIgnoreCase("pippo")
+//			&& password != null && password.equalsIgnoreCase("pluto")) {
+//			Utente utente = new Utente();
+//			utente.setNome("Pippo");
+//			utente.setCognome("Pluto");
+//			request.getSession().setAttribute("user", utente);			
+//			//response.sendRedirect("home.jsp");
+//			response.sendRedirect("home2.jsp");
+//		} else {
+//			request.getSession().setAttribute("error", "CREDENZIALI ERRATE");;
+//			response.sendRedirect("login.jsp");
+//		}
 	}
 
 }
