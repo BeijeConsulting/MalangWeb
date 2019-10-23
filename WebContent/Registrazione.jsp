@@ -8,21 +8,26 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>LOG-IN</title>
+<title>RegistraContatto</title>
 </head>
 <body>
 <%
-String username = request.getParameter("username");
-String password = request.getParameter("password");
+String nome = request.getParameter("nome");
+String cognome = request.getParameter("cognome");
+String mail = request.getParameter("mail");
+String telefono = request.getParameter("telefono");
+String conferma = request.getParameter("conferma");
 
+Connection con = ConnectionFactory.getConnection();
+Statement stmt = con.createStatement();
 
+//ho premuto modifica e procedo al codice
 //else{ 
 	//response.sendRedirect("index.jsp");}
 	
-	Connection con = ConnectionFactory.getConnection();
-	Statement stmt = con.createStatement();
 	
-	String query = "SELECT id FROM jsp_utenti WHERE username = '" + username + "'"; 
+	
+	String query = "SELECT id FROM jsp_utenti WHERE nome = '" + nome + "'"; 
 	
 	
 	ResultSet set = stmt.executeQuery(query);
@@ -30,8 +35,6 @@ String password = request.getParameter("password");
 	if(set.first()){
 		response.sendRedirect("index.jsp?status=duplicato");
 		
-		
-
 	}
 	else
 	{
@@ -40,14 +43,23 @@ String password = request.getParameter("password");
 			out.println("il tuo username e': " + request.getParameter("username"));
 			out.print("la tua password e': " + request.getParameter("password"));
 		}*/
-		if(request.getParameter("username")!="" && request.getParameter("password")!= ""){
-			query="INSERT INTO jsp_utenti (username,password) VALUE ('" + username + "','"+ password +"')";
-			stmt.execute(query);
+		if(conferma != "" && conferma != null){
+	
+				if(request.getParameter("nome")!="" && request.getParameter("cognome")!="" && request.getParameter("email")!="" && request.getParameter("telefono")!= ""){
+				query="INSERT INTO jsp_utenti (nome,cognome,email,telefono) VALUE ('" + nome + "','"+ cognome +"','" + mail + "','"+ telefono +"')";
+				stmt.execute(query);
 			
-			response.sendRedirect("index.jsp?status=inserito");
-		}else{
+				response.sendRedirect("index.jsp?status=inserito");
+			}else{
 			//out.print("mi dispiace riprova...");
-			response.sendRedirect("index.jsp?status=vuoto");
+				response.sendRedirect("index.jsp?status=vuoto");
+			}
+		}else{
+			if(request.getParameter("nome")!="" && request.getParameter("cognome")!="" && request.getParameter("email")!="" && request.getParameter("telefono")!= ""){
+			response.sendRedirect("Modifica.jsp?nome="+request.getParameter("nome")+"&cognome="+request.getParameter("cognome")+"&email="+request.getParameter("email")+"&telefono="+request.getParameter("telefono"));
+			}else{
+				response.sendRedirect("index.jsp?status=vuoto");
+			}
 		}
 	}
 	
