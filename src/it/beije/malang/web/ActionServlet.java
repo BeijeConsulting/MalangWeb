@@ -49,6 +49,7 @@ public class ActionServlet extends HttpServlet {
 			final String path = "C:\\Esercizi\\UserBean.csv";
 			User u = (User)request.getSession().getAttribute("userBean");
 			
+			//TODO: fix FileManager
 			List<String> list = new ArrayList<>();
 			list.add(u.getName());
 			list.add(u.getSurname());
@@ -61,11 +62,12 @@ public class ActionServlet extends HttpServlet {
 			FileManager.writeRow(writer, list, ";");
 			writer.close();
 			
-			response.sendRedirect("index.jsp?result=done");
-			
+			request.getSession().setAttribute("ok", "OK");
+			response.sendRedirect("index.jsp");
 		}
 		catch(Exception ex) {
-			response.sendRedirect("index.jsp?error=INVALID_FIELDS");
+			request.getSession().setAttribute("error", Error.UNKNOWN);
+			response.sendRedirect("index.jsp");
 		}
 		
 	}

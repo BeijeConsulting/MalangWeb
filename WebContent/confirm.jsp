@@ -18,7 +18,7 @@
 	
 	<form action="actionServlet" method="POST">
 		<input type="submit" name="confirm" value="Conferma">
-		<input type="submit" name="modify" value="Modifica">
+		<input type="submit" formaction="index.jsp" name="modify" value="Modifica">
 	</form>
 	
 </body>
