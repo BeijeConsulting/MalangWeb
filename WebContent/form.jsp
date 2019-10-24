@@ -51,7 +51,7 @@ if(request.getParameter("status").equals("campi_vuoti")){
 	}else if(request.getParameter("status").equals("email")){
 		out.print("Email non valida");
 		}else if(request.getParameter("status").equals("cellulare")){
-			out.print("Cellulare non valido");
+			out.print("Cellulare non valido. Inseriscilo come +39xxxyyyxxxx");
 			}
 }
 	%>
