@@ -61,11 +61,11 @@ public class TestServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		if (username != null && username.equalsIgnoreCase("pippo")
-			&& password != null && password.equalsIgnoreCase("pluto")) {
+		if (username != null && username.equalsIgnoreCase("")
+			&& password != null && password.equalsIgnoreCase("")) {
 			Utente utente = new Utente();
-			utente.setNome("Pippo");
-			utente.setCognome("Pluto");
+			utente.setNome("Simone");
+			utente.setCognome("Agostini");
 			request.getSession().setAttribute("user", utente);			
 			//response.sendRedirect("home.jsp");
 			response.sendRedirect("home2.jsp");

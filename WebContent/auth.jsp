@@ -25,17 +25,16 @@ if (user == null) {
 
 user.setNome(request.getParameter("param_nome"));
 user.setCognome(request.getParameter("param_cognome")); 
+user.setEmail(request.getParameter("param_email"));
+user.setTelefono(request.getParameter("param_telefono")); 
 %>
 
-<%= user.getNome() %> <% // user.getCognome() %><br>
+<%= user.getNome() %> 
+<%= user.getCognome() %> 
+<%= user.getEmail() %> 
+<%= user.getTelefono() %> 
 
-
-
-
-<jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
-
-<jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
-<jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
+ 
 <br><br>
 <a href="login2.jsp">MODIFICA</a>
 

@@ -11,6 +11,8 @@
 <jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
 <%
 String nome = userBean.getNome() != null ? userBean.getNome() : "";
+String email = userBean.getEmail() != null ? userBean.getEmail() : "";
+String telefono = userBean.getTelefono() != null ? userBean.getTelefono() : "";
 String cognome = userBean.getCognome();
 if (cognome == null) {
 	cognome = "";
@@ -18,25 +20,30 @@ if (cognome == null) {
 %>
 
 <form action="auth.jsp" method="get">
-<<<<<<< HEAD
 
-	NOME : <input type="text" name="param_nome" value="inserisci nome"><br>
-	
-	COGNOME : <input type="text" name="param_cognome" value="inserisci cognome"><br>
-	
-	EMAIL : <input type="text" name="param_email" value="inserisci email"><br>
-	
-	TELEFONO : <input type="text" name="param_telefono" value="inserisci telefono"><br>
-	
-=======
+
 	NOME : <input type="text" name="param_nome" value="<%= nome %>"><br>
+	
+	
 	COGNOME : <input type="text" name="param_cognome" value="<%= cognome %>"><br>
->>>>>>> refs/remotes/origin/master
+
+	
+	EMAIL : <input type="text" name="param_email" value="<%= email %>"><br>
+	
+	
+	TELEFONO : <input type="text" name="param_telefono" value="<%= telefono %>"><br>
+	
+	
+	
 	<input type="submit" value="ACCEDI">
-	<input type="button" value="MODIFICA">
-	<input type="radio" value="MODIFICA">
+	
+
+
+	
 	
 </form>
-
+<form action="Controller.java" method="get">
+	<input type="button" name="esci" value="ESCI">
+</form>
 </body>
 </html>
