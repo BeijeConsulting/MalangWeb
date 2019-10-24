@@ -10,9 +10,7 @@
 
 
 <form action="out.jsp" method="post">
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
@@ -28,10 +26,9 @@
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-</form>
+</form> 
 
 <title>login</title>
 </head>
@@ -44,12 +41,6 @@ if (error != null) {
 	request.getSession().removeAttribute("error");
 }
 %>
-
-<form action="servlet" method="post">
-	USERNAME : <input type="text" name="username"><br>
-	PASSWORD : <input type="password" name="password"><br>
-	<input type="submit" value="ACCEDI">
-</form>
 
 </body>
 </html>

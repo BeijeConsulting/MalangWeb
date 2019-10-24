@@ -14,6 +14,11 @@
 <jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
 <jsp:setProperty name="userBean" property="nome" param="param_nome"/>
 <jsp:setProperty name="userBean" property="cognome" param="param_cognome"/>
+<jsp:setProperty name="userBean" property="telefono" param="param_telefono"/>
+<jsp:setProperty name="userBean" property="email" param="param_email"/>
+
+
+
 <%
 //TRADUZIONE IN JAVA :
 Utente user = (Utente) request.getSession().getAttribute("userBean");
@@ -24,12 +29,18 @@ if (user == null) {
 
 user.setNome(request.getParameter("param_nome"));
 user.setCognome(request.getParameter("param_cognome"));
+user.setTelefono(request.getParameter("param_telefono"));
+user.setEmail(request.getParameter("param_email"));
+
 %>
 
 <%= user.getNome() %> <%= user.getCognome() %><br>
 <jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
 <br><br>
+
 <a href="login2.jsp">MODIFICA</a>
+
+<input type="submit" value="ACCEDI"> 
 
 </body>
 </html>
