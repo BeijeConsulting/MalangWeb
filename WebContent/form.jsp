@@ -34,10 +34,9 @@ out.print("<font color='green'><b>Modifica i Tuoi Dati : </b></font><br>");
 <form action="ControllerDati" method="get">
 Nome  <input type="text" id="input" value="<%= request.getParameter("nome") != null ? request.getParameter("nome") : "" %>" placeholder="Nome" name="nome"><br>
 Cognome  <input type="text" id="input" value="<%= request.getParameter("cognome") != null ? request.getParameter("cognome") : "" %>" placeholder="Cognome" name="cognome"><br>
-Email <input type="text" id="input" placeholder="Email" value="<%= request.getParameter("email") != null ? request.getParameter("email") : "" %>"name="email"><br>
-Password  <input type="text" id="input" placeholder="Password" value="<%= request.getParameter("password") != null ? request.getParameter("password") : "" %>" name="password"><br>
-Cellulare  <input type="text" id="input" placeholder="Cellulare" name="cellulare" value="<%= request.getParameter("cellulare") != null ? java.net.URLEncoder.encode(request.getParameter("cellulare")) : "" %>"><br>
-
+Email <input type="email" id="input" placeholder="Email" value="<%= request.getParameter("email") != null ? request.getParameter("email") : "" %>"name="email"><br>
+Password  <input type="password" id="input" placeholder="Password" value="<%= request.getParameter("password") != null ? request.getParameter("password") : "" %>" name="password"><br>
+Cellulare  <input type="text" id="input" placeholder="+39xxxyyyxxxx" name="cellulare" value="<%= request.getParameter("cellulare") != null ? java.net.URLEncoder.encode(request.getParameter("cellulare")) : "" %>"><br>
 <button type="submit" class="btn btn-primary" name="continua"><%= request.getParameter("status") != null ? request.getParameter("status").equals("modifica") ? "Modifica" : "Continua" : "Continua" %></button>
 </form>
 </div>
