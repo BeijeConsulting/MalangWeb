@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
  * Per la gestione del login con rindirizzamento in funzione dei casi
  */
 @WebServlet("/insertServlet")
-public class InsertInDb extends HttpServlet {
+public class BeanToCSV extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * questo costruttore sarà chiamato solo la prima volta (scope application)
      */
-    public InsertInDb() {
+    public BeanToCSV() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -45,7 +45,8 @@ public class InsertInDb extends HttpServlet {
 		String cognome = request.getParameter("cognome");
 		String email = request.getParameter("email");
 		// Se i parametri non sono nulli stampa i parametri ricevuti sulla pagina home2.jsp sulla quale rindirizza l'utente 
-		if ((nome != null) && (cognome != null) && (email != null) ) {
+		if (request.getParameter("conferma") != null )
+			{
 			Utente utente = new Utente();
 			utente.setNome(nome);
 			utente.setCognome(cognome);
@@ -53,9 +54,17 @@ public class InsertInDb extends HttpServlet {
 			request.getSession().setAttribute("user", utente);	
 			response.sendRedirect("ConfirmToLoginMio.jsp");
 			
+			File filename = new File("C:\\temp\\prova1.txt");
 			
-	
 			
+			while ( filename.exists());
+				{
+					List<String[]> writer = ScriviCSV.scrivi( utente, nome, cognome, email, filename);
+	               request.getSession().setAttribute("conferma" , writer);
+	               response.sendRedirect("ConfirmToLoginMio.jsp");
+	              
+		
+			} 
 			
 			//Altrimenti stampa un msg di errore sulla pagina di login.jsp
 		} else {
