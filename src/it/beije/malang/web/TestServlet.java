@@ -36,15 +36,15 @@ public class TestServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		ArrayList<Contatto> lista = importfile.salvaInArray("C:\\temp\\rubrica.txt");
-		
-		for(Contatto c : lista) {
-			response.getWriter().append(c.getNome() + " " + c.getCognome() + " " + c.getTelefono() + " " + c.getEmail() + "\n");
-			
+//		
+//		ArrayList<Contatto> lista = importfile.salvaInArray("C:\\temp\\rubrica.txt");
+//		
+//		for(Contatto c : lista) {
+//			response.getWriter().append(c.getNome() + " " + c.getCognome() + " " + c.getTelefono() + " " + c.getEmail() + "\n");
+//			
 		}
 	
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -53,18 +53,18 @@ public class TestServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
-		if (username != null && username.equalsIgnoreCase("pippo")
-			&& password != null && password.equalsIgnoreCase("pluto")) {
-			Utente utente = new Utente();
-			utente.setNome("Pippo");
-			utente.setCognome("Pluto");
-			request.getSession().setAttribute("user", utente);			
-			//response.sendRedirect("home.jsp");
-			response.sendRedirect("home2.jsp");
-		} else {
-			request.getSession().setAttribute("error", "CREDENZIALI ERRATE");;
-			response.sendRedirect("login.jsp");
-		}
+//		if (username != null && username.equalsIgnoreCase("pippo")
+//			&& password != null && password.equalsIgnoreCase("pluto")) {
+//			Utente utente = new Utente();
+//			utente.setNome("Pippo");
+//			utente.setCognome("Pluto");
+//			request.getSession().setAttribute("user", utente);			
+//			//response.sendRedirect("home.jsp");
+//			response.sendRedirect("home2.jsp");
+//		} else {
+//			request.getSession().setAttribute("error", "CREDENZIALI ERRATE");;
+//			response.sendRedirect("login.jsp");
+//		}
 	}
 
 }
