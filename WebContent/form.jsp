@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+<%@ page import="it.beije.malang.web.Utente"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +13,7 @@
 <body>
 
 <jsp:useBean id="userBean" class="it.beije.malang.web.Utente" scope="session" />
+
 <%
 String nome = userBean.getNome() != null ? userBean.getNome() : "";
 String cognome = userBean.getCognome() != null ? userBean.getCognome() : "";
@@ -25,11 +30,11 @@ if (error != null) {
 }
 %>
 
-<form action="confirmpage.jsp" method="get">
-	Nome : <input type="text" name="<%= nome %>"><br>
-	Cognome : <input type="text" name="<%= cognome %>"><br>
-	Email : <input type="text" name="<%= email %>"><br>
-	Telefono : <input type="text" name="<%= telefono %>"><br>
+<form action="ControllerForm" method="POST">
+	Nome : <input type="text" name="nome" value="<%= nome %>"><br>
+	Cognome : <input type="text" name="cognome" value="<%= cognome %>"><br>
+	Email : <input type="text" name="email" value="<%= email %>"><br>
+	Telefono : <input type="text" name="telefono"  value="<%= telefono %>"><br>
 	<input type="submit" value="Invia">
 </form>
 </body>

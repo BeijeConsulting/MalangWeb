@@ -36,27 +36,33 @@ public class ControllerForm extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String nome = request.getParameter("nome").trim();
 		String cognome = request.getParameter("cognome").trim();
 		String email = request.getParameter("email").trim();
 		String telefono = request.getParameter("telefono").trim();
+		//System.out.println(nome);
 		
-		if (nome.equals("") || nome.equals(null) ||
-				cognome.equals("") || cognome.equals(null)
-				) {
-				Utente utente = new Utente();
-				utente.setNome("Pippo");
-				utente.setCognome("Pluto");
-				request.getSession().setAttribute("userBean", utente);			
+		Utente utente = new Utente();
+		utente.setNome(nome);
+		utente.setCognome(cognome);
+		utente.setEmail(email);
+		utente.setTelefono(telefono);
+		request.getSession().setAttribute("userBean", utente);	
+		System.out.println(request.getSession().getAttribute("userBean"));
+		
+		if (!(nome.equals("") || nome.equals(null) ||
+				cognome.equals("") || cognome.equals(null) ||
+				email.equals("") || email.equals(null) ||
+				telefono.equals("") || telefono.equals(null))){
+						
 				//response.sendRedirect("home.jsp");
-				response.sendRedirect("home2.jsp");
+				response.sendRedirect("confirmpage.jsp");
 			} else {
 				request.getSession().setAttribute("error", "CREDENZIALI ERRATE");;
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("form.jsp");
 			}
 
-
-		doGet(request, response);
 	}
 
 }
