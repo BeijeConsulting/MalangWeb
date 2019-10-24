@@ -6,6 +6,7 @@ public class Utente {
 	private String cognome;
 	private String nome;
 	private String email;
+	private String telefono;
 	
 	
 	public String getCognome() {
@@ -28,5 +29,10 @@ public class Utente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
+	public String getTelefono() {
+		return telefono;
+	}
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
 }
