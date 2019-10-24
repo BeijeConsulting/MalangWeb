@@ -56,11 +56,11 @@ public class Controllo extends HttpServlet {
 			request.getSession().setAttribute("error", "TELEFONO NON VALIDO");;
 			response.sendRedirect("login2.jsp");
 		}
-		else if (nome.equals("")||nome.contains("  ")||nome.equals("")) {
+		else if (nome.equals("")||nome.contains("  ")||nome.equals(" ")) {
 			request.getSession().setAttribute("error", "MANCA IL COGNOME O IL NOME");;
 			response.sendRedirect("login2.jsp");	
 		}
-		else if (cognome.equals("")||cognome.contains(" ")||cognome.equals(" ")) {
+		else if (cognome.equals("")||cognome.contains("  ")||cognome.equals(" ")) {
 			request.getSession().setAttribute("error", "MANCA IL COGNOME O IL NOME");;
 			response.sendRedirect("login2.jsp");	
 		}
