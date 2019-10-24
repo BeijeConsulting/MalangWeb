@@ -36,6 +36,7 @@ public class TestServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+	
 		
 		if (username != null && username.equalsIgnoreCase("pippo")
 			&& password != null && password.equalsIgnoreCase("pluto")) {
