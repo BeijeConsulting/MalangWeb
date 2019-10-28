@@ -47,5 +47,21 @@ public class ControlloDati {
 
 		else return null;
 	}
+	
+	public static String controlloNome(String nome) {
+		if(nome.equals("")||nome.contains("  ")||nome.equals(" ")) {
+			return null;
+		}
+		else
+			return nome;
+	}
+	
+	public static String controlloCognome(String cognome) {
+		if (cognome.equals("")||cognome.contains("  ")||cognome.equals(" ")) {
+			return null;
+		}
+		else
+			return cognome;
+	}
 
 }
