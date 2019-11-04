@@ -22,11 +22,15 @@ if (user == null) {
 	request.getSession().setAttribute("user", user);			
 }
 
-user.setNome(request.getParameter("param_nome"));
-user.setCognome(request.getParameter("param_cognome"));
+//user.setNome(request.getParameter("param_nome"));
+//user.setCognome(request.getParameter("param_cognome"));
+//user.getNome();
+//user.getCognome();
 %>
 
-<%= user.getNome() %> <%= user.getCognome() %><br>
+<%=  %> 
+<%=   %><br>
+
 <jsp:getProperty name="userBean" property="nome"/>-<jsp:getProperty name="userBean" property="cognome"/>
 <br><br>
 <a href="login2.jsp">MODIFICA</a>
