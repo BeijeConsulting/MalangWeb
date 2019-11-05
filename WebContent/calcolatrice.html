@@ -75,12 +75,57 @@ p.dspl {
 
 <script>
 var display = document.getElementById("display");
+var operando = 0;
 var result = 0;
+var operator ='';
 
 function vedi(valore) {
-	result += valore;
-	
-	display.innerHTML = result;
+	if (valore>0||valore<9){
+		operando = operando * 10 + valore;
+		display.innerHTML = operando;
+	}
+	if(valore== '+'){
+				operator=valore;
+				result=operando;
+				operando=0;
+				display.innerHTML = result;
+				}
+	if(valore== '*'){
+				operator=valore;
+				result=operando;
+				operando=0;
+				display.innerHTML = result;
+				}
+	if (valore=='/'){
+				operator=valore;
+				result=operando;
+				operando=0;
+				display.innerHTML = result;
+				}
+	if (valore=='-'){
+				operator=valore;
+				result=operando;
+				operando=0;
+				display.innerHTML = result;
+				}
+	if(valore=='='){
+			if (operator=='+'){
+									result += operando;
+									display.innerHTML = result;
+			}
+			else if(operator=='*'){
+									result = result * operando; 
+									display.innerHTML = result; 
+			}
+			else if(operator=='/'){
+									result = result / operando;  
+									display.innerHTML = result;  
+			}
+			else if(operator=='-'){
+									result = result - operando; 
+									display.innerHTML = result;  
+			}
+}
 }
 </script>
 
