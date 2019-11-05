@@ -75,9 +75,12 @@ p.dspl {
 
 <script>
 var display = document.getElementById("display");
+var result = 0;
 
 function vedi(valore) {
-  display.innerHTML = valore;
+	result += valore;
+	
+	display.innerHTML = result;
 }
 </script>
 
