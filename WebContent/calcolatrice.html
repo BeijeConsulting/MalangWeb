@@ -42,31 +42,31 @@ p.dspl {
 
 <table>
   <tr>
-    <td id="t1" onclick="vedi(1)">1</td>
-    <td id="t2" onclick="vedi(2)">2</td>
-    <td id="t3" onclick="vedi(3)">3</td>
+    <td id="t1" onclick="vedi(1); somma(1)">1</td>
+    <td id="t2" onclick="vedi(2); somma(2)">2</td>
+    <td id="t3" onclick="vedi(3); somma(3)">3</td>
     <td id="t3" onclick="vedi('+')">+</td>
   </tr>
   <tr>
-    <td id="t4" onclick="vedi(4)">4</td>
-    <td id="t5" onclick="vedi(5)">5</td>
-    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t4" onclick="vedi(4); somma(4)">4</td>
+    <td id="t5" onclick="vedi(5); somma(5)">5</td>
+    <td id="t6" onclick="vedi(6); somma(6)">6</td>
     <td id="t3" onclick="vedi('-')">-</td>
   </tr>
   <tr>
-    <td id="t7" onclick="vedi(7)">7</td>
-    <td id="t8" onclick="vedi(8)">8</td>
-    <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t7" onclick="vedi(7); somma(7)">7</td>
+    <td id="t8" onclick="vedi(8); somma(8)">8</td>
+    <td id="t9" onclick="vedi(9); somma(9)">9</td>
     <td id="t3" onclick="vedi('*')">*</td>
   </tr>
   <tr>
-    <td id="tAC" onclick="vedi('AC')">AC</td>
+    <td id="tAC" onclick="vedi('0'); reset()">AC</td>
     <td id="t0" onclick="vedi(0)">0</td>
     <td id="tComma" onclick="vedi('.')">,</td>
     <td id="t3" onclick="vedi('/')">/</td>
   </tr>
   <tr>
-     <td id="tEqual" onclick="vedi('=')" colspan="4">=</td>
+     <td id="tEqual" onclick="res(); " colspan="4">=</td>
   </tr>
 </table>
 
@@ -75,9 +75,23 @@ p.dspl {
 
 <script>
 var display = document.getElementById("display");
+var result = 0;
 
 function vedi(valore) {
+ 
   display.innerHTML = valore;
+}
+function somma(val) {
+	  result += val;
+}
+	  
+function res() {
+	  
+	  display.innerHTML = result;
+}
+function reset() {
+	  
+	 return result = 0;
 }
 </script>
 
