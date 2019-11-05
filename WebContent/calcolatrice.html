@@ -75,12 +75,36 @@ p.dspl {
 
 <script>
 var display = document.getElementById("display");
-var result = 0;
+var op1;
+var op2;
+var somma = false;
+
+var d = 0;
 
 function vedi(valore) {
-	result += valore;
+	console.log(valore);
 	
-	display.innerHTML = result;
+/* 	if (!somma) {
+		if (valore >= 0 && valore <= 9) {
+			op1 = valore;
+			d = op1;
+		} else if (valore == '+') {
+			somma = true;
+			d = valore;
+		}
+	} else {
+		if (valore >= 0 && valore <= 9) {
+			op2 = valore;
+			d = op2;
+		} else if (valore == '=') {
+			d = op1 + op2;
+		}
+	}
+ */
+ 
+	d = d * 10 + valore;
+	
+	display.innerHTML = d;
 }
 </script>
 
