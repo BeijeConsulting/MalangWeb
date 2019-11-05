@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.calc {
+  width: 30%;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  border-style: solid;
+  border-size: 1px;
+}
+
+table {
+  margin: auto;
+  margin-top: 30px;
+}
+
+td {
+  border-style: solid;
+  border-size: 1px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+p.dspl {
+  height: 50px;
+  font-size: 14pt;
+}
+</style>
+
+</head>
+<body>
+
+<div class="calc">
+
+<h2>CALCULATOR</h2>
+
+<p id="display" class="dspl">_____<p>
+
+<table>
+  <tr>
+    <td id="t1" onclick="vedi(1)">1</td>
+    <td id="t2" onclick="vedi(2)">2</td>
+    <td id="t3" onclick="vedi(3)">3</td>
+    <td id="t3" onclick="vedi('+')">+</td>
+  </tr>
+  <tr>
+    <td id="t4" onclick="vedi(4)">4</td>
+    <td id="t5" onclick="vedi(5)">5</td>
+    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t3" onclick="vedi('-')">-</td>
+  </tr>
+  <tr>
+    <td id="t7" onclick="vedi(7)">7</td>
+    <td id="t8" onclick="vedi(8)">8</td>
+    <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t3" onclick="vedi('*')">*</td>
+  </tr>
+  <tr>
+    <td id="tAC" onclick="vedi('AC')">AC</td>
+    <td id="t0" onclick="vedi(0)">0</td>
+    <td id="tComma" onclick="vedi('.')">,</td>
+    <td id="t3" onclick="vedi('/')">/</td>
+  </tr>
+  <tr>
+     <td id="tEqual" onclick="vedi('=')" colspan="4">=</td>
+  </tr>
+</table>
+
+</div>
+
+
+<script>
+var display = document.getElementById("display");
+
+function vedi(valore) {
+  display.innerHTML = valore;
+}
+</script>
+
+</body>
+</html>
