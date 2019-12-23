@@ -22,7 +22,7 @@ String telefono = userBean.getTelefono() != null ? userBean.getTelefono() : "";
 	COGNOME : <input type="text" name="cognome" value="<%=cognome %>"><br>
 	EMAIL : <input type="text" name="email" value="<%=email %>"><br>
 	TELEFONO: <input type="text" name="telefono" value="<%=telefono %>"><br>
-	<input type="submit" value="ACCEDI">
+	<input type="submit" value="ACCEDI">0
 	<a href="Principale.jsp">MODIFICA</a>
 </form>
   

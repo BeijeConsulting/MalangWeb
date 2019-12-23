@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+.calc {
+  width: 30%;
+  height: 500px;
+  margin: auto;
+  text-align: center;
+  border-style: solid;
+  border-size: 1px;
+  border-color: red;
+}
+
+table {
+  margin: auto;
+  margin-top: 30px;
+  margin-color: blue;
+}
+
+td {
+  border-style: solid;
+  border-size: 1px;
+  border-size: blue;
+
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+
+p.dspl {
+  height: 50px;
+  font-size: 14pt;
+}
+</style>
+
+</head>
+<body>
+
+<div class="calc">
+
+<h2>CALCULATOR</h2>
+
+<p id="display" class="dspl">_____<p>
+
+<table>
+  <tr>
+    <td id="t1" onclick="vedi(1)">1</td>
+    <td id="t2" onclick="vedi(2)">2</td>
+    <td id="t3" onclick="vedi(3)">3</td>
+    <td id="t3" onclick="vedi('+')">+</td>
+  </tr>
+  <tr>
+    <td id="t4" onclick="vedi(4)">4</td>
+    <td id="t5" onclick="vedi(5)">5</td>
+    <td id="t6" onclick="vedi(6)">6</td>
+    <td id="t3" onclick="vedi('-')">-</td>
+  </tr>
+  <tr>
+    <td id="t7" onclick="vedi(7)">7</td>
+    <td id="t8" onclick="vedi(8)">8</td>
+    <td id="t9" onclick="vedi(9)">9</td>
+    <td id="t3" onclick="vedi('*')">*</td>
+  </tr>
+  <tr>
+    <td id="tAC" onclick="vedi('AC')">AC</td>
+    <td id="t0" onclick="vedi(0)">0</td>
+    <td id="tComma" onclick="vedi('.')">,</td>
+    <td id="t3" onclick="vedi('/')">/</td>
+  </tr>
+  <tr>
+     <td id="tEqual" onclick="vedi('=')" colspan="4">=</td>
+  </tr>
+</table>
+
+</div>
+
+
+<script>
+var display = document.getElementById("display");
+
+var num ;
+var num1 = 0;
+var somma= 0;
+
+var num2 =0;
+var num3;
+var num4;
+function vedi(valore) {
+	num1 = valore;
+	num = num1;
+
+	num2 = valore1;
+	num3 = num2;
+	
+	
+	num4= num1 + num2;
+	display.innerHTML = num1+'\n'+num2+'\t'+num ;
+}
+ 
+
+ 
+
+
+</script>
+
+</body>
+</html>
